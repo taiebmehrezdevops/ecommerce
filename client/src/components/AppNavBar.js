@@ -2,6 +2,7 @@ import React, { useState, Fragment } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { ShoppingCart } from "phosphor-react"
+import CustomizedBadges from './pages/StyledBadge';
 import {
   Collapse,
   Navbar,
@@ -16,6 +17,7 @@ import LoginModal from './auth/LoginModal';
 import RegisterModal from './auth/RegisterModal';
 import  {logout} from "../redux/actions/actionsUser"
 import {useNavigate} from "react-router-dom"
+import {StyledBadge} from "./pages/StyledBadge"
 import "./NavBar.css"
 
 const AppNavbar = () => {
@@ -65,7 +67,8 @@ const logoutt=()=>{
       <Navbar color="dark" dark expand="sm" className="mb-5">
         <Container>
           <NavbarBrand href="/">Home</NavbarBrand>
-          <NavbarBrand href="/" ><ShoppingCart size={32}/></NavbarBrand>
+          <NavbarBrand ><CustomizedBadges/></NavbarBrand>
+
           <NavbarToggler onClick={toggle} />
           <Collapse isOpen={isOpen} navbar>
             <Nav className="ml-auto" navbar>

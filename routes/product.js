@@ -5,9 +5,9 @@ const isAdmin=require('../middleware/isAdmin')
 const isAuth=require('../middleware/isAuth')
 //add new product
 router.post('/add',isAuth,isAdmin,async(req,res)=>{
-    const {design,desc,prix,qte,cat,image}=req.body
+    const {design,desc,prix,qte,cat,image,inStock}=req.body
     try{
-    const newProduct=new Product({design,desc,prix,qte,cat,image})
+    const newProduct=new Product({design,desc,prix,qte,cat,image,inStock})
     const product = await newProduct.save()
     res.send({msg:"Product added",product})
     }

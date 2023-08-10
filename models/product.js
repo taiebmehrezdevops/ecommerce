@@ -20,6 +20,10 @@ const productSchema=new schema({
     image:{
         type:String
     },
+    inStock:{
+        type:Boolean,
+        default: true
+    }
     
 },
 { timestamps:true}   

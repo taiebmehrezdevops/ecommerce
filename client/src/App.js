@@ -13,20 +13,21 @@ import AppNavBar from "./components/AppNavBar"
 import { Button } from 'reactstrap'
 import ProductModal from './components/pages/ProductModal';
 import Cart from './components/pages/Cart'
+import { ShoppingCart } from "phosphor-react"
+import CustomizedBadges from './components/pages/StyledBadge';
 function App() {
+  
   const dispatch=useDispatch()
 useEffect(()=>{
   dispatch(getAuthUser())
 },[])
   return (
     <div className="App">
-     
+<CustomizedBadges/>
       <AppNavBar />
- 
   <Routes>
-
+  <Route path='/' element={<ProductList />}/>
    <Route path="/dashboard" element={<Dashboard />} />
-   <Route path='/' element={<ProductList />}/>
    <Route path='/cart/:id' element={<Cart />}/>
   </Routes>
     </div>
